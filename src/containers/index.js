@@ -7,10 +7,11 @@ export default class index extends Component{
 					<div>{this.props.baseinfo.info}</div>
 					<div>
 						{
-							typeof this.props.children.map=="function"?
+							this.props.children?typeof this.props.children.map=="function"?
 							this.props.children.map(function(item){
 								return React.cloneElement(item,{...self.props})
 							}):React.cloneElement(this.props.children,{...self.props})
+							:null
 						}
 					</div>
 				</div>
